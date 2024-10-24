@@ -1,9 +1,7 @@
 from lib.Logger import Logger, Singleton
 import threading
 log = Logger()
-log1 = Logger()
-print(log)
-print(log1)
+log.record_to_file("INFO", "Приложение запущено")
 
 # s = Singleton()
 # print(s.instance)
