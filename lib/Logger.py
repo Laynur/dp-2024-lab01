@@ -1,5 +1,4 @@
 from datetime import datetime
-from lib.LevelMessage import LevelMessage
 import threading
 import os
 
@@ -16,7 +15,7 @@ class Logger:
 
     def _create_file_path(self):
         """
-        Метод для создания нового файла с логами
+        Метод для создания пути к файлу журнала
         """
         time_now = datetime.now().strftime('%Y-%m-%d.%H-%M-%S')
         log_file_name = f"DP.P1.{time_now}.log"
