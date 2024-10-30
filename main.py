@@ -3,12 +3,11 @@ from lib.LevelMessage import LevelMessage
 import threading
 
 
-def worker(level: str, message: str):
+def do_work(level: LevelMessage, message: str):
     logger = Logger()
     print(logger)
     logger.log(level.value, message)
 
-
 for i in range(10):
-    th = threading.Thread(target=worker, args=(LevelMessage.INFO, f'Поток {i}'))
+    th = threading.Thread(target=do_work, args=(LevelMessage.INFO, f'Поток {i}'))
     th.start()
