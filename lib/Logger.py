@@ -8,11 +8,13 @@ class Logger:
     _lock_write = threading.Lock()
     _lock_create = threading.Lock()
 
+    def __init__(self):
+        self._create_file_path()
+
     def __new__(cls):
         with cls._lock_create:
             if not hasattr(cls, 'instance'):
                 cls.instance = super(Logger, cls).__new__(cls)
-                cls.instance._create_file_path()
         return cls.instance
 
     def _create_file_path(self):
